@@ -1,0 +1,356 @@
+
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="generator" content="SuperHi">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>A Little Workout</title>
+		<link rel="icon" href="favicon.svg">
+		<link rel="stylesheet" href="_base.css">
+		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="prism.css"/>
+	</head>
+	<body>
+		<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+		<script src="alittleworkout.js"></script>
+		<script src="about.js"></script>
+		<script src="prism.js"></script>
+		<div class="header-image">
+		  <a href="index.html"><img src="workout_1_sm.gif"></a>
+		</div>
+
+		<header class="sticky">
+			<a href="index.html">
+				<div id ="header_logo" class="bg-1">
+					<p>You can do it!</p>
+				</div>
+			</a>
+			<nav>
+			  <a href="workout.html">workout.</a>
+			  <a href="about.html">about.</a>
+			</nav>
+		</header>
+		
+		<div class="title">
+			<section>
+			<div class="width-medium">
+			  <h1>Hi! I'm Jess and I wanted a little workout...</h1>
+			  <h2>For my brain, and my body.</h2>
+			  <p>I’m an illustrator and designer, but I wanted to hone my skills in front-end development and animation. I designed and built this website from scratch, and boy was it a wild ride. I’ve documented my steps, the resources I used, and some of the bumps in the road that I encountered.</p>
+			</div>
+			</section>
+
+		<section>
+		  <button type="button" id="steps">Step by Step</button>
+		
+		  <button type="button" id="resources">Resources</button>
+		</section>
+
+		</div>
+		
+		
+		<div id="target-steps">
+			<div class="about">
+				<div class="about-1L bg-5">
+					<img src="1_design.png" alt="design docs">
+				</div>
+				<div id="mobile-info" class="about-1R">
+					<div class="about-info">
+						<h2>
+							Design
+						</h2>
+						<p>
+							<strong>Set achievable goals:</strong> I jotted down ideas and narrowed down the site objective to one type of workout routine.
+						</p>
+						<p>
+							<strong>Inspiration:</strong> I used Figma to create a moodboard of inspirational images and websites.
+						</p>
+						<p>
+							<strong>Wireframes:</strong> Following Superhi’s Plan, Design + Code Your First Website course, I created wireframes on paper.
+						</p>
+						<p>
+							<strong>High Fidelity Prototype:</strong> I built out my wireframes into a high fidelity prototype on Figma, using placeholder images.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+<div class="about">
+	<div class="about-2R bg-4 mobile">
+		<img src="2_programming.png" alt="design docs">
+	</div>
+	<div  id="mobile-info" class="about-2L">
+		<div class="about-info">
+			<h2>
+				Programming
+			</h2>
+			<p>
+				<strong>New discoveries:</strong> Having had experience with HTML and CSS, it wasn’t hard to get the basic framework for the website down.
+			</p>
+			<p>
+				<strong>Javascript & jquery:</strong> I can only describe javascript as a temperamental demon, operating under nuanced rules that are both difficult to understand and in a language I don't speak. With some help from a bonafide programmer, I managed
+				to grasp the basics of javascript and jquery to manipulate behaviours of elements on the site.
+			</p>
+			<p>
+				<strong>I broke Superhi’s editor:</strong> I wrote a while loop that both broke my code and stopped Superhi’s editor from loading. Subsequently, the possibility of losing my work also stopped my heart from loading.
+			</p>
+		</div>
+	</div>
+	<div class="about-2R bg-4 web">
+		<img src="2_programming.png" alt="design docs">
+	</div>
+</div>
+
+		<div class="about">
+		  <div class="about-1L bg-2">
+
+				<div id="code">
+	  				<p>Workout Timer: Attempt 1</p>
+
+				  		<pre class="code-box">
+<code class="language-js">let tick = 1;
+if (tick < 600) {
+tick = tick + 1;
+}
+if (tick == 1) {
+$('#duration-1')
+	.removeClass('duration')
+		.addClass('durationCountdown') }
+		}
+							</code>
+				  		</pre>
+			  	</div>	
+
+	  			<div id="code">
+	  				<p>Workout Timer: Attempt 2</p>
+
+				  		<pre class="code-box">
+<code class="language-js">let tick = 0;
+let timer;
+let button_state = 'start';
+
+function update_page_on_timer() {
+	tick = tick + 1
+	if (tick > 600) {
+		window.clearInterval(timer)
+	}
+
+	const time_per_block = 30; 
+	let current_block = Math.floor(tick / time_per_block);
+	let time_in_block = tick % time_per_block; 
+
+	let block_percentage = 100 - (time_in_block / 30 * 100);
+	if (current_block == 0) {
+		$("#duration-bar.bar-1").width(block_percentage + '%')
+	}
+	else if (current_block == 2) {
+		$("#duration-bar.bar-3").width(block_percentage + '%')
+	}
+	else if (current_block == 4) {
+		$("#duration-bar.bar-5").width(block_percentage + '%')
+	}
+	else if (current_block == 6) {
+		$("#duration-bar.bar-7").width(block_percentage + '%')
+	}
+	else if (current_block == 8) {
+		$("#duration-bar.bar-9").width(block_percentage + '%')
+	}
+
+	// get timer bar for the rest_block + set percentage (reverse current_block)
+	let rest_percentage = (time_in_block/ 30 * 100);
+	if (current_block == 1) {
+		$("#rest .bar-2").width(rest_percentage + '%')
+	}
+	else if (current_block == 3) {
+		$("#rest .bar-4").width(rest_percentage + '%')
+	}
+	else if (current_block == 5) {
+		$("#rest .bar-6").width(rest_percentage + '%')
+	}
+	else if (current_block == 7) {
+		$("#rest .bar-8").width(rest_percentage + '%')
+	}
+	else if (current_block == 9) {
+		$("#rest .bar-10").width(rest_percentage + '%')
+	}
+}
+</code></pre>
+			  	</div>	
+			  	
+				<div id="code">
+	  				<p>Workout Timer: Attempt 3</p>
+
+				  		<pre class="code-box">
+<code class="language-js">const time_per_block = 30; //setting blocks of 30 sec
+let current_block = Math.floor(tick / time_per_block); //rounding down to block (starts at 0)
+let time_in_block = tick % time_per_block; //dividing for remainder to derive current time in block
+
+// get timer bar for the current_block + set percentage
+let block_percentage;
+	if (current_block % 2 == 0) {
+		// currently on exercise
+		block_percentage = 100 - (time_in_block / 30 * 100);
+		$(".bar-"+current_block).width('100%')
+	} else {
+		// currently on rest
+		block_percentage = (time_in_block / 30 * 100);
+		$(".bar-"+current_block).width('0')
+	}
+
+$(".bar-"+(current_block+1)).width(block_percentage + '%')
+
+}
+							</code>
+				  		</pre>
+			  	</div>
+			  	
+		  </div>
+
+
+
+		  <div  id="mobile-info" class="about-1R">
+		  	<div class="about-info">
+		  		<h2>
+		  			Programming the workout timer
+		  		</h2>
+			  	<p>
+			  		<strong>Why does this get a special section?</strong> Because it was the biggest learning curve.
+				</p>
+			  	<p>
+					<strong>First attempt:</strong> I created a ticker that counted up by one after clicking the start button. At the appropriate ticker count, a new class would apply to the duration bar, set to a transition-duration of 30 seconds. While this animated the bar from full to 0 in 30 seconds, it did not account for the actual time of a second, and didn’t allow for pausing.
+				</p>
+			  	<p>
+					<strong>Second attempt:</strong> The ticker was modified to only count up, once per second. The seconds were broken up into 30 second increments that paired with a duration bar. The width of the duration bar is matched to the percentage of time passed such that when the time was paused, the duration bar also pauses.
+				</p>
+				<p>
+					<strong>Third attempt:</strong> Cleaning up the code to eliminate repetition and allow for iteration.
+				</p>
+			  </div>
+		  </div>
+		</div>
+
+
+		<div class="about">
+		  <div class="about-2R bg-1 mobile">
+			<img src="4_animation.png" alt="design docs">
+		  </div>
+		  <div id="mobile-info" class="about-2L">
+		  	<div class="about-info">
+		  		<h2>
+		  			Illustration & Animation
+		  		</h2>
+			  	<p>
+			  		<strong>Last but not least:</strong> I saved these for last as they were less daunting than programming a website from scratch.
+				</p>
+			  	<p>
+					<strong>Illustrations:</strong> The illustrations were created and layered in Adobe Illustrator
+				</p>
+			  	<p>
+					<strong>Animation:</strong> The animations were done in Adobe After Effects with the help of Duik Bassel.2 and Motion Design School’s Motion Tools Script. Exploring the auto-rig features of Duik Brassel.2 was a lot of fun.
+				</p>
+			  </div>
+		  </div>
+		<div class="about-2R bg-1 web">
+			<img src="4_animation.png" alt="design docs">
+		</div>
+		</div>
+
+		<div id = "target-resources" class="about bg-mid">
+			<div class="about-resources">
+				<h1>These are all the tools & resources that I used to put this website together:</h1>
+			</div>
+			<div id="resource-list" class="about-resources">
+				<div>
+					<h2>Tutorials</h2>
+					<p>
+						<ul>
+							<li>
+								<a href="https://motiondesign.school/products/fundamentals-course-on-after-effects" target="_blank">
+									Motion Design School: Fundamentals in After Effects
+								</a>
+							</li>
+							<li>
+								<a href="https://www.youtube.com/watch?v=i63vPXJ00r0" target="_blank">
+									Duik 16 (Brassel) Jumpstart | After Effects Character Rigging
+								</a>
+							</li>
+							<li>
+								<a href="https://www.superhi.com/courses/plan-design-and-code-your-first-website" target="_blank">
+									Superhi: Plan, Design + Code Your First Website course
+								</a>
+							</li>
+						</ul>
+					</p>
+				</div>
+				<div>
+					<h2>Websites</h2>
+					<p>
+						<ul>
+							<li>
+								<a href="https://www.w3schools.com/default.asp" target="_blank">W3Schools
+								</a></li>
+							<li>
+								<a href="https://css-tricks.com/" target="_blank">CSS-Tricks
+								</a></li>
+							<li>
+								<a href="https://developer.mozilla.org/en-US/docs/Learn" target="_blank">MDN Web Docs - Mozilla
+								</a></li>	
+							<li>
+								<a href="https://api.jquery.com/" target="_blank">jQuery API Documentation
+								</a></li>
+							<li>
+								<a href="https://www.siteinspire.com/" target="_blank">Site Inspire
+								</a></li>
+							<li>
+								<a href="https://prismjs.com/index.html" target="_blank">
+									Prism
+								</a>
+							</li>
+						</ul>
+					</p>
+				</div>
+				<div>
+					<h2>Tools</h2>
+					<p>
+						<ul>
+							<li>Figma</li>
+							<li>Adobe Illustrator</li>
+							<li>Adobe After Effects</li>
+							<li>Superhi Editor 2.0</li>
+							<li>AWS Cloud9</li>
+							<li>Duik Brassels</li>
+							<li>Motion Tools Script</li>
+						</ul>
+					</p>
+				</div>
+				<div class="resources-small">
+					<h2>Big thanks to</h2>
+					<p>
+					<a href="https://www.linkedin.com/in/simeonwong/?originalSubdomain=ca" target="_blank">Simeon Wong</a> for his help with the javascript elements of the website and entertaining this endless loop of conversation: “Why isn’t this working?! Oh I figured it out....I broke it.”
+					</p>
+				</div>
+			</div>
+		</div>
+
+
+		
+		<footer>
+		  <p>© copyright 2020 Jess Leung.</p>
+		  <a href="https://www.alittlejess.com">
+		    <img src="ic_website.svg" alt="website" />
+		  </a>
+		  <a href="https://www.instagram.com/alittlejess">
+		    <img src="ic_instagram.svg" alt="instagram" />
+		  </a>
+		  <a href="mailto:jess@alittlejess.com">
+		    <img src="ic_contact.svg" alt="website" />
+		  </a>
+		</footer>
+		
+
+		
+	</body>
+</html>

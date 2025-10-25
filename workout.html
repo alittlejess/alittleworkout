@@ -1,0 +1,235 @@
+
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="generator" content="SuperHi">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>A Little Workout</title>
+		<link rel="icon" href="favicon.svg">
+		<link rel="stylesheet" href="_base.css">
+		<link rel="stylesheet" href="style.css">
+	</head>
+
+	<body>
+		<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+		<script src="alittleworkout.js"></script>
+	    <script src="workout.js"></script>
+		<div class="header-image">
+		  <a href="index.html"><img src="workout_1_sm.gif"></a>
+		</div>
+
+		<header class="sticky">
+			<a href="index.html">
+				<div id ="header_logo" class="bg-1">
+					<p>You can do it!</p>
+				</div>
+			</a>
+			<nav>
+			  <a href="workout.html">workout.</a>
+			  <a href="about.html">about.</a>
+			</nav>
+		</header>
+		
+		<!-- ============ POPUP ============ -->
+		<div id="popup_Container">
+			<div id="popup" class="popupOff">
+				<div class="popup">
+					<img src="workout_done.gif" />
+					<h1>
+						You did it!
+					</h1>
+					<p>
+						10 minutes of cardio is a great place start! As this gets easier, try to add more reps or try harder exercises!
+					</p>
+					<button class="popupClose">Close</button>
+				</div>
+			</div>
+			<div id="popup_deadarea" class="popupOff">
+				<!-- this gets turned on/off -->
+			</div>
+		</div>
+
+		
+		<!-- ============ ACTUAL PAGE ============ -->
+		
+<div class="title">
+	<h1>Let’s do a little workout!</h1>
+	<div id="start_container">
+		<button type="button" id="btn_start">Start</button>
+	</div>
+	<button type="button" id="ph_button" class="popupOff">Start</button>
+</div>
+		
+		<div id="target-start" class="bg-1 workout">
+		  <div class="workout-animation-1">
+		    <img src="1_highKnees_2.gif" />
+		  </div>
+		  <div class="instructions-1">
+		    <h2>
+		      High Knees.
+		    </h2>
+		    <ol>
+		      <li>Run in place.</li>
+		      <li>Keep core activated and relax shoulders.</li>
+		      <li>While running, pull knees towards chest as high as possible</li>
+		      <li>Continue alternating legs as fast as possible.</li>
+		    </ol>
+		    <div>
+		      <div id="duration-bar" class="bar-1 duration-overlap"></div>
+		      <div class="duration c-1 duration-overlap">30 seconds.</div>
+		    </div>
+		  </div>
+		</div>
+		
+		<div id="rest">
+		  <div class="c-1 duration-overlap">
+		    a little rest.
+		  </div>
+		  <div class="bg-1 rest-bar duration-overlap bar-2"></div>
+		</div>
+		
+		<div id="target-2" class="bg-2 workout">
+		  <div class="workout-animation-2 mobile">
+			    <img src="2_burpees.gif" />
+		  </div>
+		  <div class="instructions-2">
+		    <h2>
+		      Burpees.
+		    </h2>
+		    <ol>
+		      <li>Stand straight, legs shoulder width apart.</li>
+		      <li>Jump while reaching upwards with your hands.</li>
+		      <li>On landing, bend down into a push-up position. Hands should be flat on the ground below your shoulders, feet should be together.</li>
+		      <li>Bend your elbows to lower your chest to slightly below the level of your bent elbow.</li>
+		      <li>Straighten arms again and return to standing position.</li>
+		    </ol>
+		    <div>
+		      <div id="duration-bar" class="bar-3 duration-overlap"></div>
+		      <div class="duration c-2 duration-overlap">30 seconds.</div>
+		    </div>
+		  </div>
+		  <div class="workout-animation-2 web">
+		    <img src="2_burpees.gif" />
+		  </div>
+		</div>
+		
+		<div id="rest">
+		  <div class="c-2 duration-overlap">
+		    a little rest.
+		  </div>
+		  <div class="bg-2 rest-bar duration-overlap bar-4"></div>
+		</div>
+		
+		<div id="target-3" class="bg-3 workout">
+		  <div class="workout-animation-1">
+		    <img src="3_lunges.gif" />
+		  </div>
+		  <div class="instructions-1">
+		    <h2>
+		      Lunges.
+		    </h2>
+		    <ol>
+		      <li>Stand straight, legs shoulder width apart.</li>
+		      <li>Take a big step forward with right leg, heel first.</li>
+		      <li>Lower your body until right thigh is parallel to the floor and right shin is vertical.</li>
+		      <li>Press into right heel to stand up to starting position.</li>
+		      <li>Repeat on the other side.</li>
+		    </ol>
+		    <div>
+		      <div id="duration-bar" class="bar-5 duration-overlap"></div>
+		      <div class="duration c-3 duration-overlap">30 seconds.</div>
+		    </div>
+		  </div>
+		</div>
+		
+		<div id="rest">
+		  <div class="c-3 duration-overlap">
+		    a little rest.
+		  </div>
+		  <div class="bg-3 rest-bar duration-overlap bar-6"></div>
+		</div>
+		
+		<div id="target-4" class="bg-4 workout">
+		  <div class="workout-animation-2 mobile">
+		    <img src="4_pushups.gif" />
+		  </div>
+		  <div class="instructions-2">
+		    <h2>
+		      Push-ups.
+		    </h2>
+		    <ol>
+		      <li>Start with your feet together, hands flat on the ground below your shoulders, and arms straight.</li>
+		      <li>Breathe in as you bend your elbows, keep them tight alongside your body.</li>
+		      <li>Lower your chest to slightly below the level of your bent elbow.</li>
+		      <li>Breathe out as you push back up to the starting position.</li>
+		    </ol>
+		    <div>
+		      <div id="duration-bar" class="bar-7 duration-overlap"></div>
+		      <div class="duration c-4 duration-overlap">30 seconds.</div>
+		    </div>
+		  </div>
+		  <div class="workout-animation-2 web">
+		    <img src="4_pushups.gif" />
+		  </div>
+		</div>
+		
+		<div id="rest">
+		  <div class="c-4 duration-overlap">
+		    a little rest.
+		  </div>
+		  <div class="bg-4 rest-bar duration-overlap bar-8"></div>
+		</div>
+		
+		<div id="target-5" class="bg-5 workout">
+		  <div class="workout-animation-1">
+		    <img src="5_jumpingJacks-2.gif" />
+		  </div>
+		  <div class="instructions-1">
+		    <h2>
+		      Jumping Jacks.
+		    </h2>
+		    <ol>
+		      <li>Stand upright with your legs together and arms at your sides.</li>
+		      <li>Bend knees slightly and jump into the air.</li>
+		      <li>On jump, spread your legs to roughly shoulder-width apart and raise  arms above your head.</li>
+		      <li>Jump and return to starting position.</li>
+		      <li>Repeat.</li>
+		    </ol>
+		    <div>
+		      <div id="duration-bar" class="bar-9 duration-overlap"></div>
+		      <div class="duration c-5 duration-overlap">30 seconds.</div>
+		    </div>
+		  </div>
+		</div>
+		
+		<div id="rest">
+		  <div class="c-5 duration-overlap">
+		    a little rest.
+		  </div>
+		  <div class="bg-5 rest-bar duration-overlap bar-10"></div>
+		</div>
+		
+		<section>
+		  <button type="button" id="refresh">Second Rep!</button>
+		
+		  <button type="button" id="btn_popup">All done</button>
+		</section>
+		
+		<footer>
+		  <p>© copyright 2020 Jess Leung.</p>
+		  <a href="https://www.alittlejess.com">
+		    <img src="ic_website.svg" alt="website" />
+		  </a>
+		  <a href="https://www.instagram.com/alittlejess">
+		    <img src="ic_instagram.svg" alt="instagram" />
+		  </a>
+		  <a href="mailto:jess@alittlejess.com">
+		    <img src="ic_contact.svg" alt="website" />
+		  </a>
+		</footer>
+		
+		
+	</body>
+</html>
